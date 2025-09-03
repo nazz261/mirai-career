@@ -97,7 +97,7 @@
 <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmpDT7TC4N0Vw7bJ5iLzchQdsTTRr6yPKh3pTsi6ZfHtSgS_6OdWCmwcg54jTMg6axpjbWgxs3pxkrekpy0PcLsP9c1pmP8fU9xzkexdkC7LmPRJ1ABEHh9z-bNdTh7dSeSzcPqfVq68AS1nv7KPwwaUo3G7FfyPiGfwm7u_v1ElEllfNNpgz1WOiLMGbgo79oQhx-SuvEype3V9Cya632EO6b18IWH0qbaLQrGEvCDPlWS0-uvZuh0xzdFf4-5gR8teqJmJui1_bZ");'></div>
 <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 <div class="relative container mx-auto px-4 py-32 text-center text-white">
-<h1 class="text-5xl font-extrabold mb-4 leading-tight">Mirai-Career: Your Path to a Brighter Future</h1>
+<h1 class="text-5xl font-extrabold mb-4 leading-tight">TEST Mirai-Career: Your Path to a Brighter Future</h1>
 <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
                         Unlock your potential with our comprehensive career development programs. Explore new opportunities and achieve your professional goals.
                     </p>
