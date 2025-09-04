@@ -146,6 +146,20 @@
                         <a class="{{ Request::is('contact') ? 'text-[var(--primary-color)] font-bold' : 'text-[var(--text-secondary)] font-medium hover:text-[var(--primary-color)]' }} transition-colors duration-200 ease-in-out" href="{{ url('contact') }}">Contact</a>
                         <a class="{{ Request::is('news') ? 'text-[var(--primary-color)] font-bold' : 'text-[var(--text-secondary)] font-medium hover:text-[var(--primary-color)]' }} transition-colors duration-200 ease-in-out" href="{{ url('news') }}">News</a>
                     </div>
+                    @if(Auth::check())
+                        <div class="flex items-center gap-3">
+                            <span class="font-bold text-[var(--primary-color)]">{{ Auth::user()->name }}</span>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="bg-[var(--primary-color)] text-white px-4 py-2 rounded hover:bg-pink-700 transition">Sign Out</button>
+                            </form>
+                        </div>
+                    @else
+                        <button 
+                            class="bg-[var(--primary-color)] text-white px-4 py-2 rounded hover:bg-pink-700 transition"
+                            onclick="showLoginModal()"
+                        >Sign In</button>
+                    @endif
                 </nav>
             </header>
 
