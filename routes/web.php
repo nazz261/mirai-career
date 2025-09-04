@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/jlpt-preparation', function () {
+    return view('jlpt-preparation');
+});
