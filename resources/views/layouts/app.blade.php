@@ -19,7 +19,6 @@
             --background-color: #F8F9FA;
             --text-primary: #1A202C;
             --text-secondary: #4A5568;
-            
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;

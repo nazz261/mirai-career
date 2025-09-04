@@ -15,7 +15,7 @@
             </button>
         </div>
     </section>
-    <section class="py-20 section-bg-gray">
+    <section class="py-20 section-bg-gray" x-data="{ showModal: false, modalTitle: '', modalContent: '' }">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-extrabold text-[var(--text-primary)] mb-4">JLPT Preparation Programs</h2>
@@ -24,55 +24,76 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer" @click="modalTitle = 'JLPT N5 - Basic'; modalContent = 'Understand some basic Japanese, focusing on foundational grammar and vocabulary.'; showModal = true" role="button" tabindex="0" @keydown.enter.prevent="modalTitle = 'JLPT N5 - Basic'; modalContent = 'Understand some basic Japanese, focusing on foundational grammar and vocabulary.'; showModal = true" @keydown.space.prevent="modalTitle = 'JLPT N5 - Basic'; modalContent = 'Understand some basic Japanese, focusing on foundational grammar and vocabulary.'; showModal = true">
                     <div class="p-6 text-center border-b-4 border-[var(--primary-color)]">
                         <h3 class="text-2xl font-bold text-[var(--primary-color)]">N5</h3>
                         <p class="text-sm font-semibold text-[var(--text-secondary)]">Basic</p>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[var(--text-secondary)] mb-6 text-center flex-grow">Understand some basic Japanese, focusing on foundational grammar and vocabulary.</p>
-                        <a class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto" href="#">Learn More</a>
+                        <div class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto pointer-events-none">Learn More</div>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer" @click="modalTitle = 'JLPT N4 - Elementary'; modalContent = 'Understand basic Japanese used in daily conversations and simple written materials.'; showModal = true" role="button" tabindex="0" @keydown.enter.prevent="modalTitle = 'JLPT N4 - Elementary'; modalContent = 'Understand basic Japanese used in daily conversations and simple written materials.'; showModal = true" @keydown.space.prevent="modalTitle = 'JLPT N4 - Elementary'; modalContent = 'Understand basic Japanese used in daily conversations and simple written materials.'; showModal = true">
                     <div class="p-6 text-center border-b-4 border-[var(--primary-color)]">
                         <h3 class="text-2xl font-bold text-[var(--primary-color)]">N4</h3>
                         <p class="text-sm font-semibold text-[var(--text-secondary)]">Elementary</p>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[var(--text-secondary)] mb-6 text-center flex-grow">Understand basic Japanese used in daily conversations and simple written materials.</p>
-                        <a class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto" href="#">Learn More</a>
+                        <div class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto pointer-events-none">Learn More</div>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer" @click="modalTitle = 'JLPT N3 - Intermediate'; modalContent = 'Understand Japanese used in everyday situations to a certain degree.'; showModal = true" role="button" tabindex="0" @keydown.enter.prevent="modalTitle = 'JLPT N3 - Intermediate'; modalContent = 'Understand Japanese used in everyday situations to a certain degree.'; showModal = true" @keydown.space.prevent="modalTitle = 'JLPT N3 - Intermediate'; modalContent = 'Understand Japanese used in everyday situations to a certain degree.'; showModal = true">
                     <div class="p-6 text-center border-b-4 border-[var(--primary-color)]">
                         <h3 class="text-2xl font-bold text-[var(--primary-color)]">N3</h3>
                         <p class="text-sm font-semibold text-[var(--text-secondary)]">Intermediate</p>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[var(--text-secondary)] mb-6 text-center flex-grow">Understand Japanese used in everyday situations to a certain degree.</p>
-                        <a class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto" href="#">Learn More</a>
+                        <div class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto pointer-events-none">Learn More</div>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer" @click="modalTitle = 'JLPT N2 - Upper-Intermediate'; modalContent = 'Understand Japanese used in a variety of circumstances with natural speed.'; showModal = true" role="button" tabindex="0" @keydown.enter.prevent="modalTitle = 'JLPT N2 - Upper-Intermediate'; modalContent = 'Understand Japanese used in a variety of circumstances with natural speed.'; showModal = true" @keydown.space.prevent="modalTitle = 'JLPT N2 - Upper-Intermediate'; modalContent = 'Understand Japanese used in a variety of circumstances with natural speed.'; showModal = true">
                     <div class="p-6 text-center border-b-4 border-[var(--primary-color)]">
                         <h3 class="text-2xl font-bold text-[var(--primary-color)]">N2</h3>
                         <p class="text-sm font-semibold text-[var(--text-secondary)]">Upper-Intermediate</p>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[var(--text-secondary)] mb-6 text-center flex-grow">Understand Japanese used in a variety of circumstances with natural speed.</p>
-                        <a class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto" href="#">Learn More</a>
+                        <div class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto pointer-events-none">Learn More</div>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer" @click="modalTitle = 'JLPT N1 - Advanced'; modalContent = 'Understand Japanese used in a broad range of circumstances, approaching native level.'; showModal = true" role="button" tabindex="0" @keydown.enter.prevent="modalTitle = 'JLPT N1 - Advanced'; modalContent = 'Understand Japanese used in a broad range of circumstances, approaching native level.'; showModal = true" @keydown.space.prevent="modalTitle = 'JLPT N1 - Advanced'; modalContent = 'Understand Japanese used in a broad range of circumstances, approaching native level.'; showModal = true">
                     <div class="p-6 text-center border-b-4 border-[var(--primary-color)]">
                         <h3 class="text-2xl font-bold text-[var(--primary-color)]">N1</h3>
                         <p class="text-sm font-semibold text-[var(--text-secondary)]">Advanced</p>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[var(--text-secondary)] mb-6 text-center flex-grow">Understand Japanese used in a broad range of circumstances, approaching native level.</p>
-                        <a class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto" href="#">Learn More</a>
+                        <div class="block w-full text-center bg-[var(--primary-color)] text-white py-2 rounded-md font-bold hover:bg-pink-700 transition-colors duration-300 mt-auto pointer-events-none">Learn More</div>
                     </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div
+                x-show="showModal"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                style="display: none;"
+                @click.self="showModal = false"
+            >
+                <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-8 relative">
+                    <button @click="showModal = false" class="absolute top-3 right-3 text-gray-400 hover:text-[var(--primary-color)] text-2xl font-bold focus:outline-none" aria-label="Close">
+                        &times;
+                    </button>
+                    <h3 class="text-2xl font-bold text-[var(--primary-color)] mb-4" x-text="modalTitle"></h3>
+                    <p class="text-[var(--text-secondary)] text-base" x-text="modalContent"></p>
                 </div>
             </div>
         </div>
