@@ -220,7 +220,7 @@
                                 }
                             }">
                             <div @mousedown="startDrag" @mouseleave="endDrag" @mousemove.prevent="moveDrag" @mouseup="endDrag" @touchend="endDrag" @touchmove.prevent="moveDrag" @touchstart="startDrag" class="relative w-full h-full overflow-auto cursor-grab">
-                                <iframe allowfullscreen="" class="absolute inset-0 w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827855365538!2d139.7523176152589!3d35.6812362801944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf90839e4dd%3A0x9541a7c062779785!2sImperial%20Palace!5e0!3m2!1sen!2sjp!4v1683264245678!5m2!1sen!2sjp" style="border:0;"></iframe>
+                                <iframe allowfullscreen="" class="absolute inset-0 w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Leuwiliang%2C%20Bogor&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0;"></iframe>
                             </div>
                         </div>
                     </div>
