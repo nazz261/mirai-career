@@ -2,11 +2,11 @@
 
 @section('content')
 <main class="max-w-6xl mx-auto py-10 font-['Plus_Jakarta_Sans']">
-    <h1 class="text-4xl font-extrabold text-[var(--primary-color)] mb-8 text-center">Manage JLPT Classes</h1>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-[var(--primary-color)] mb-8 text-center">Manage JLPT Classes</h1>
 
     <!-- Add / Edit Class -->
     <div class="bg-white shadow-xl rounded-2xl p-8 mb-12 border border-gray-200">
-        <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-6">
+        <h2 class="text-xl md:text-2xl font-bold text-[var(--primary-color)] mb-6">
             {{ isset($editClass) ? 'Edit Class' : 'Add New Class' }}
         </h2>
         <form method="POST" 
@@ -116,7 +116,7 @@
 
     <!-- Existing Classes -->
     <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-200">
-        <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-6">Existing Classes</h2>
+        <h2 class="text-xl md:text-2xl font-bold text-[var(--primary-color)] mb-6">Existing Classes</h2>
         <div class="overflow-x-auto">
         <table class="w-full border rounded-xl overflow-hidden">
             <thead>
