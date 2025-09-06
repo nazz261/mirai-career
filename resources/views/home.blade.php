@@ -2,6 +2,7 @@
 @section('content')
 
 <main class="flex-1">
+    
     <!-- Hero -->
     <section class="relative bg-white overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center bg-fixed" style='background-image: linear-gradi    <!-- SSW Preparation Programs - Enhanced Design -->
@@ -51,18 +52,51 @@
                 
                 <!-- Trust indicators -->
                 <div class="mt-16 animate-fade-in-up" style="animation-delay: 1s;">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-white mb-2">5000+</div>
-                            <div class="text-white/80 text-sm">Successful Graduates</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto"
+                        x-data="{
+                            graduates: 0,
+                            placement: 0,
+                            partners: 0,
+                            init() {
+                                const animate = (target, endValue, duration) => {
+                                    const start = performance.now();
+                                    const update = currentTime => {
+                                        const elapsed = currentTime - start;
+                                        const progress = Math.min(elapsed / duration, 1);
+                                        
+                                        this[target] = Math.floor(endValue * progress);
+                                        
+                                        if (progress < 1) {
+                                            requestAnimationFrame(update);
+                                        }
+                                    };
+                                    requestAnimationFrame(update);
+                                };
+
+                                setTimeout(() => {
+                                    animate('graduates', 5000, 2000);
+                                    animate('placement', 98, 2000);
+                                    animate('partners', 50, 2000);
+                                }, 500);
+                            }
+                        }">
+                        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <h3 class="text-4xl font-bold text-white mb-2">
+                                <span x-text="graduates">0</span>+
+                            </h3>
+                            <p class="text-white/90 font-medium">Successful Graduates</p>
                         </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-white mb-2">98%</div>
-                            <div class="text-white/80 text-sm">Job Placement Rate</div>
+                        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <h3 class="text-4xl font-bold text-white mb-2">
+                                <span x-text="placement">0</span>%
+                            </h3>
+                            <p class="text-white/90 font-medium">Job Placement Rate</p>
                         </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-white mb-2">50+</div>
-                            <div class="text-white/80 text-sm">Partner Companies</div>
+                        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <h3 class="text-4xl font-bold text-white mb-2">
+                                <span x-text="partners">0</span>+
+                            </h3>
+                            <p class="text-white/90 font-medium">Partner Companies</p>
                         </div>
                     </div>
                 </div>
@@ -72,9 +106,8 @@
         <!-- Decorative wave at bottom -->
         <div class="absolute bottom-0 left-0 w-full overflow-hidden">
             <svg class="relative block w-full h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#ffffff"></path>
-                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#ffffff"></path>
-                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#ffffff"></path>
+
+
             </svg>
         </div>
     </section>
@@ -205,7 +238,7 @@
             </div>
 
             <div class="text-center">
-                <div class="bg-gradient-to-r from-[var(--primary-color)] to-pink-600 rounded-3xl p-8 md:p-12 text-white inline-block shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <div class="bg-gradient-to-r from-[var(--primary-color)] to-pink-500 rounded-3xl p-8 md:p-12 text-white inline-block shadow-2xl transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center justify-center gap-4 mb-6">
                         <div class="bg-white/20 p-3 rounded-full">
                             <span class="material-icons text-2xl">school</span>
@@ -229,7 +262,7 @@
                 x-transition:enter="transition ease-out duration-200"
                 x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100"
-                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="opacity-100"
                 x-transition:leave-end="opacity-0"
                 class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
@@ -257,19 +290,19 @@
             modalColor: '',
             query: '',
             programs: [
-                { icon: 'local_hospital', title: 'Nursing Care', detail: 'Comprehensive training for caregiving, elderly support, and nursing skills in Japan. Learn about patient care, medical terminology, and Japanese healthcare standards.', color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'local_hospital', title: 'Nursing Care', detail: 'Comprehensive training for caregiving, elderly support, and nursing skills in Japan. Learn about patient care, medical terminology, and Japanese healthcare standards.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
                 { icon: 'cleaning_services', title: 'Building Cleaning Management', detail: 'Professional building cleaning, facility management, and hygiene standards. Master cleaning techniques, equipment operation, and safety protocols.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'construction', title: 'Construction', detail: 'Essential skills for construction, site safety, and Japanese building standards. Learn construction techniques, safety regulations, and project management.', color: 'text-pink-700', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'build_circle', title: 'Machine Parts and Tooling', detail: 'Precision manufacturing, assembling, and maintaining machine parts and tools. Master CNC operation, quality control, and technical specifications.', color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'construction', title: 'Construction', detail: 'Essential skills for construction, site safety, and Japanese building standards. Learn construction techniques, safety regulations, and project management.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'build_circle', title: 'Machine Parts and Tooling', detail: 'Precision manufacturing, assembling, and maintaining machine parts and tools. Master CNC operation, quality control, and technical specifications.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
                 { icon: 'precision_manufacturing', title: 'Industrial Machinery', detail: 'Operate and maintain industrial machinery across various industries. Learn troubleshooting, preventive maintenance, and safety procedures.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'memory', title: 'Electric and Information Industries', detail: 'Electronics, IT, and information industry skills for modern workplaces. Cover circuit design, programming, and digital systems maintenance.', color: 'text-pink-700', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'directions_boat', title: 'Shipbuilding and Ship Machinery', detail: 'Comprehensive shipbuilding, repair, and marine machinery operation training. Learn welding, marine engineering, and vessel maintenance.', color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'memory', title: 'Electric and Information Industries', detail: 'Electronics, IT, and information industry skills for modern workplaces. Cover circuit design, programming, and digital systems maintenance.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'directions_boat', title: 'Shipbuilding and Ship Machinery', detail: 'Comprehensive shipbuilding, repair, and marine machinery operation training. Learn welding, marine engineering, and vessel maintenance.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
                 { icon: 'car_repair', title: 'Automobile Repair and Maintenance', detail: 'Automotive diagnostics, repair, and maintenance skills for modern vehicles. Master engine systems, electrical components, and diagnostic tools.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'flight', title: 'Aviation', detail: 'Ground handling, aircraft maintenance, and airport operations training. Learn safety protocols, equipment handling, and aviation regulations.', color: 'text-pink-700', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'hotel', title: 'Accommodation', detail: 'Hotel operations, guest services, and hospitality management excellence. Master customer service, room management, and hospitality standards.', color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'flight', title: 'Aviation', detail: 'Ground handling, aircraft maintenance, and airport operations training. Learn safety protocols, equipment handling, and aviation regulations.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'hotel', title: 'Accommodation', detail: 'Hotel operations, guest services, and hospitality management excellence. Master customer service, room management, and hospitality standards.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
                 { icon: 'agriculture', title: 'Agriculture and Aquaculture', detail: 'Modern farming, aquaculture, and food production techniques for sustainable agriculture. Learn crop management, aquaculture systems, and agricultural technology.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'fastfood', title: 'Food and Beverage Manufacturing', detail: 'Food processing, safety standards, and quality control in manufacturing environments. Master HACCP principles, production lines, and food safety regulations.', color: 'text-pink-700', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
-                { icon: 'restaurant', title: 'Food Service', detail: 'Restaurant operations, customer service, and food preparation excellence. Learn Japanese cuisine, service standards, and restaurant management.', color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'fastfood', title: 'Food and Beverage Manufacturing', detail: 'Food processing, safety standards, and quality control in manufacturing environments. Master HACCP principles, production lines, and food safety regulations.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
+                { icon: 'restaurant', title: 'Food Service', detail: 'Restaurant operations, customer service, and food preparation excellence. Learn Japanese cuisine, service standards, and restaurant management.', color: 'text-pink-500', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' },
             ],
             filtered() {
                 const q = this.query.toLowerCase().trim();
@@ -382,7 +415,7 @@
             </div>
 
             <!-- Call to Action Section -->
-            <div class="bg-gradient-to-r from-[var(--primary-color)] to-pink-700 rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden shadow-lg">
+            <div class="bg-gradient-to-r from-[var(--primary-color)] to-pink-500 rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden shadow-lg">
                 <div class="absolute inset-0 bg-black bg-opacity-10"></div>
                 <div class="relative z-10">
                     <div class="inline-flex items-center gap-2 bg-white bg-opacity-20 rounded-full px-4 py-2 text-sm font-medium mb-6">
@@ -413,17 +446,27 @@
             <!-- Enhanced Modal -->
             <div
                 x-show="showModal"
-                x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
                 x-transition:leave="transition ease-in duration-200"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
                 class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4"
                 style="display: none;"
                 @click.self="showModal = false"
             >
-                <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full relative overflow-hidden">
+                <!-- Modal Content Container -->
+                <div 
+                    x-show="showModal"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    class="bg-white rounded-xl shadow-2xl max-w-2xl w-full relative overflow-hidden"
+                >
                     <!-- Modal Header -->
                     <div class="bg-gradient-to-r from-[var(--primary-color)] to-pink-700 p-8 text-white relative">
                         <button @click="showModal = false" class="absolute top-4 right-4 text-white hover:text-gray-200 p-2 rounded-full hover:bg-white hover:bg-opacity-20 transition-all duration-200 z-10" aria-label="Close">

@@ -25,7 +25,7 @@
     <!-- Hero Section with Background -->
     <section class="relative py-24 animate-fade-in is-visible overflow-hidden" data-animate="fade-in" style="background-image: linear-gradient(135deg, rgba(236, 72, 153, 0.85), rgba(219, 39, 119, 0.9)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
         <!-- Background overlay for better text readability -->
-        <div class="absolute inset-0 bg-gradient-to-r from-pink-500/80 to-rose-600/75"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-400/80 to-rose-500/75"></div>
         
         <!-- Floating elements for visual interest -->
         <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style="animation-delay: 0s;"></div>

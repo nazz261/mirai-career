@@ -22,12 +22,32 @@
         observer.observe(section);
     });
 ">
-    <section class="relative section-bg-white py-24 animate-fade-in is-visible" data-animate="fade-in">
-        <div class="relative container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-extrabold text-[var(--text-primary)] mb-4">About Mirai-Career</h1>
-            <p class="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
-                Pioneering pathways for global talent to thrive in Japan's dynamic professional landscape.
-            </p>
+    <!-- Replace the existing hero section with this -->
+    <section class="relative py-24 animate-fade-in overflow-hidden" data-animate="fade-in" style="background-image: linear-gradient(135deg, rgba(236, 72, 153, 0.85), rgba(219, 39, 119, 0.9)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <!-- Background overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-400/80 to-rose-500/75"></div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+        
+        <div class="relative container mx-auto px-4 text-center z-10">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+                    About Mirai-Career
+                </h1>
+                <p class="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                    Pioneering pathways for global talent to thrive in Japan's dynamic professional landscape.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Decorative wave at bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg class="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+
+            </svg>
         </div>
     </section>
     <section class="py-20 section-bg-gray overflow-hidden" data-animate="slide-up">
@@ -109,22 +129,22 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300" data-team-member="">
-                    <img alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOwZ0-X1aMGA3xr13qiWWuLkzRdbtbziJW-MYwVxNKCMlTpo8eMhdvsuljYwXdWlLJr4IktBMvlGB5HRemyA41NHcnJoYj8EelKE5-y_Hp37KEUtk1PkUOVfZjAUT4JcVE48R06nML99NTZTiMKtaJpcRzHDyrTxxa71sjHhBrOry-JqLfwrLcIt6Mkx5ulc7gmN6ShsJY0CWy91EN74OS_cYrs6Fs4IwGUl1i2aeXlPaI2xi-xWRAlREJxeiZDffI_hoDujoCGDib"/>
+                    <img alt="Kenji Tanaka" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80"/>
                     <h3 class="text-xl font-bold text-[var(--text-primary)]">Kenji Tanaka</h3>
-                    <p class="text-[var(--primary-color)] font-semibold">CEO &amp; Founder</p>
+                    <p class="text-[var(--primary-color)] font-semibold">CEO & Founder</p>
                 </div>
                 <div class="text-center bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300" data-team-member="">
-                    <img alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjWxWFPNQBepuPCRbPtb3XW_WwXJh2YhYUVEXZ1n8LrV2-rsCM_eHDiu7vbv0KsMFztfWvROOQtYApUcugATA-6Be_1CMPHVV4VEeeg7obx33tVQhyMKzJyZtutSkmAmnT8EmzySfWwaHGWH-A7hh86wcd2F6BisqEl9DvGNGFwmoIjukyDbEh_spVmH_MbUd6NLylaTNJfA-O7TSnfvg9gKCzR1d-FfAqOPQyo5wXV8D5-cHTEgAbdX1DpyoDhAtkeZlyAli72Vu7"/>
+                    <img alt="Yuki Sato" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)] object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80"/>
                     <h3 class="text-xl font-bold text-[var(--text-primary)]">Yuki Sato</h3>
                     <p class="text-[var(--primary-color)] font-semibold">Head of Programs</p>
                 </div>
                 <div class="text-center bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300" data-team-member="">
-                    <img alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD77LFwAOGa48YYg-FjwW7ReWJk9tIGxnrzOtQt0tVkSknUovv19sHH4rlu4-XtMNVEElLyczNhmlBwQ4F3GcP8VWtQgEwLtiiNHcH44-ZCOE4XHOrdKZR1PV1StKJEolh9l1tljrGbbk9fkqWrA_uByFRYdQU04wyaAmKRYaqoDpGJ27GsQwCs1JoFSJFHtXpBRGiuFMdbpt9aq_Acw7EK3mF4yqGlGO2iYnQf_zyJbFnyKBYVR_jXybXoDI5TjveTe2mK_qr5Sjm7"/>
+                    <img alt="Haruto Ito" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)] object-cover" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80"/>
                     <h3 class="text-xl font-bold text-[var(--text-primary)]">Haruto Ito</h3>
                     <p class="text-[var(--primary-color)] font-semibold">Lead Instructor</p>
                 </div>
                 <div class="text-center bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300" data-team-member="">
-                    <img alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX5JHe7H4u2bi5ssDQ4KgqM0eG6l3kOt8UnGyfy4e2tL-6sjfZ7uEeRm0oFBq5Mi6BBCfcx3DtjXM_tZjqwGtU1T90GKEuxjaR0nRzMbk_RKPP67jGM-oqWSwVR689IRNNOKjIil1AhNpoFgawwRce4nbi71Doh5fosk4bjiq98C1o9ene4HYRuINbc-s3AGDJqkTyglXyHSzJ22K8mswNr98_fld0Czi9DaCS6Cy1rlTT2qmKjmqXSIcRQtubVzWDCSPt55NunBZM"/>
+                    <img alt="Airi Yamamoto" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[var(--secondary-color)] object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80"/>
                     <h3 class="text-xl font-bold text-[var(--text-primary)]">Airi Yamamoto</h3>
                     <p class="text-[var(--primary-color)] font-semibold">Student Support Manager</p>
                 </div>

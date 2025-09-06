@@ -2,20 +2,44 @@
 
 @section('content')
 
-<main class="flex-1 font-['Plus_Jakarta_Sans']">
-    <div class="relative bg-white">
-        <div class="absolute inset-0">
-            <img alt="Cherry blossoms" class="w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq06CIZiqKVLmpjpzB4z29xfa_7Ro5Ksh09nA__e8cOoyRWv9zu8Qcz7aw9VIp8cWr3LbPmefqeuYXE-Jk3B0bHYgLYX6Eh7N-_-nuhS3tGWz8ljm9SHnHoEiPoHHqT_MI4bZE2nirI0UEBZ7h6DpdMZuhXNA8mdTnZb4sPzqsjbU1e5bm5MoRqjGDSxOzva-Bhwgyr3J-QZTMAunsHjHoXmgDcnsIVEjNJpwp6wQhw2DxLop1NbfENLesVh-hU2nLRs9DdERo2MBi"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <h1 class="text-5xl font-extrabold text-[var(--text-primary)] sm:text-6xl lg:text-7xl">JLPT Preparation Programs</h1>
-            <p class="mt-6 text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
+<main class="flex-1" x-init="
+    const sections = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.2 });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+">
+    <!-- Hero Section with Background -->
+    <section class="relative py-24 animate-fade-in is-visible overflow-hidden" data-animate="fade-in" style="background-image: linear-gradient(135deg, rgba(236, 72, 153, 0.85), rgba(219, 39, 119, 0.9)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <!-- Background overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-400/80 to-rose-500/75"></div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">JLPT Preparation Programs</h1>
+            <p class="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                 Master the Japanese Language Proficiency Test with our expertly designed courses. Choose your level and start your journey to fluency today.
             </p>
         </div>
-    </div>
+        
+        <!-- Decorative wave at bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg class="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            </svg>
+        </div>
+    </section>
 
+    <!-- Rest of your existing JLPT content, just remove the cherry blossom background div -->
     <div 
         class="bg-[var(--background-color)] py-16 sm:py-24"
         x-data="{

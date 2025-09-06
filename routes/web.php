@@ -15,6 +15,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/news', function () {
+    return view('news');
+});
 // Student page
 Route::get('/jlpt-preparation', [JlptClassController::class, 'preparationPage'])->name('jlpt.preparation');
 
